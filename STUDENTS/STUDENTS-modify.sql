@@ -63,3 +63,12 @@ WHERE (FirstName = 'KITTLE' AND LastName = 'MOWAT') ;
 UPDATE List
 SET GPA = GPA + (GPA*.1)
 WHERE (FirstName = 'SHERON' AND LastName = 'NAKAHARA') OR (FirstName = 'BENNIE' AND LastName = 'BYRUM');
+
+
+
+SELECT * FROM List
+ORDER BY GPA, Grade, LastName;
+
+
+SELECT *
+FROM Teachers;

@@ -27,3 +27,7 @@ ALTER TABLE Wine
 --Set revenue: cases * cost of case
 UPDATE Wine
 SET Revenue = Cases * Price
+
+
+SELECT * FROM <Wine>
+ORDER BY Revenue;

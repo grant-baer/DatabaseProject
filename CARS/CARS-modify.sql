@@ -10,3 +10,8 @@
 
 DELETE FROM CarsData
 WHERE (((Year != 1978) OR (Year != 1979)) AND (MPG < 20)) OR ((MPG<26) AND (Horsepower <= 110)) OR ((Cylinders != 8) AND (Accelerate > 60));
+
+
+SELECT * FROM <CarsData>
+ORDER BY Year, Id;
+
