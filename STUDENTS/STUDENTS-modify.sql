@@ -56,7 +56,7 @@ WHERE (FirstName = 'COLLIN' AND LastName = 'VANVLIET') ;
 --GPA of KITTLE MOWAT to current+.3
 UPDATE List
 SET GPA = GPA + .3
-WHERE (FirstName = 'KITTLE' AND LastName = 'MOWAT') ;
+WHERE (FirstName = 'KITTLE' AND LastName = 'MOWATT') ;
 
 --GPA of SHERON NAKAHARA and BENNIE BYRUM to 10% higher than current
 
