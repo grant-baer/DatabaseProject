@@ -7,7 +7,7 @@
   
 
 CREATE TABLE Marathon(
-    Place INT,
+    Place INT PRIMARY Key,
     Time TIME,
     Pace TIME,
     GroupPlace INT,
@@ -18,5 +18,7 @@ CREATE TABLE Marathon(
     FirstName VARCHAR(32),
     LastName VARCHAR(32),
     Town VARCHAR(32),
-    State VARCHAR(32)
+    State VARCHAR(32),
+    UNIQUE(Time, LastName),
+    UNIQUE(GroupNumber, BIBNumber)
 );  

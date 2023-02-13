@@ -15,17 +15,9 @@ CREATE TABLE Goods(
     Id VARCHAR(32) PRIMARY KEY,
     Flavor VARCHAR(32),
     Food VARCHAR(32),
-    Price FLOAT
+    Price FLOAT,
+    UNIQUE(Flavor, Food)
 );
-
-
-CREATE TABLE Items(
-    Reciept INT,
-    Ordinal INT,
-    Item VARCHAR(32),
-    FOREIGN KEY(Item) REFERENCES Goods(Id)
-);
-
 
 CREATE TABLE Receipts( 
     RecieptNumber INT PRIMARY KEY,
@@ -33,6 +25,18 @@ CREATE TABLE Receipts(
     CustomerId INT,
     FOREIGN KEY(CustomerId) REFERENCES Customers(Id)
 );
+
+CREATE TABLE Items(
+    Reciept INT,
+    Ordinal INT,
+    Item VARCHAR(32),
+    PRIMARY KEY(Reciept, Item),
+    FOREIGN KEY(Item) REFERENCES Goods(Id),
+    FOREIGN KEY(Reciept) REFERENCES Receipts(RecieptNumber)
+);
+
+
+
 
 
 

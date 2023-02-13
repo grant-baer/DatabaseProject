@@ -24,6 +24,8 @@ CREATE TABLE Reservations(
     FirstName VARCHAR(32),
     Adults INT,
     Kids INT,
+    UNIQUE(Room, CheckIn),
+    UNIQUE(CheckIn, LastName),
     FOREIGN KEY(Room) REFERENCES Rooms(RoomId)
 );
 

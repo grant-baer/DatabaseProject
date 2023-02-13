@@ -30,7 +30,7 @@ CREATE TABLE Songs(
 CREATE TABLE Instruments(
     SongId INT,
     BandmateId INT,
-    Instrument VARCHAR(32),
+    Instrument VARCHAR(32) Primary KEY,
 
     FOREIGN KEY(SongId) REFERENCES Songs(SongId),
     FOREIGN KEY(BandmateId) REFERENCES Band(Id)
@@ -42,6 +42,7 @@ CREATE TABLE Performance(
     SongId INT,
     BandmateId INT,
     StagePosition VARCHAR(32),
+    Primary KEY(SongId, BandmateId),
     FOREIGN KEY(SongId) REFERENCES Songs(SongId),
     FOREIGN KEY(BandmateId) REFERENCES Band(Id)
 );
@@ -51,7 +52,7 @@ CREATE TABLE Tracklists(
     AlbumId INT,
     Position INT,
     SongId INT,
-    
+    Primary KEY(AlbumId, Position),
     FOREIGN KEY(SongId) REFERENCES Songs(SongId),
     FOREIGN KEY(AlbumId) REFERENCES Albums(AId)
 );
@@ -60,6 +61,7 @@ CREATE TABLE Vocals(
     SongId INT,
     BandmateId INT,
     Type VARCHAR(32),
+    Primary KEY(SongId, BandmateId),
     FOREIGN KEY(SongId) REFERENCES Songs(SongId),
     FOREIGN KEY(BandmateId) REFERENCES Band(Id)
 );
