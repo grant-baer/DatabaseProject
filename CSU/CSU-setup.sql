@@ -19,7 +19,7 @@ CREATE TABLE CSUFees(
     Campus INT,
     Year INT,
     CampusFee INT,
-    PRIMARY KEY(Campus, Year)
+    PRIMARY KEY(Campus, Year),
     FOREIGN KEY(Campus) REFERENCES Campuses(Id)
 );
 
@@ -27,7 +27,7 @@ CREATE TABLE Degrees(
     Year INT,
     Campus INT,
     Degrees INT,
-    PRIMARY KEY(Campus, Year)
+    PRIMARY KEY(Campus, Year),
     FOREIGN KEY(Campus) REFERENCES Campuses(Id)
 );
 
@@ -44,7 +44,7 @@ CREATE TABLE Enrollments(
     Year INT,
     TotalEnrollment_AY INT,
     FTE_AY INT,
-    PRIMARY KEY(Campus, Year)
+    PRIMARY KEY(Campus, Year),
     FOREIGN KEY(Campus) REFERENCES Campuses(Id)
 );
 
@@ -52,7 +52,7 @@ CREATE TABLE Faculty(
     Campus INT,
     Year INT,
     Faculty FLOAT,
-    PRIMARY KEY(Campus, Year)
+    PRIMARY KEY(Campus, Year),
     FOREIGN KEY(Campus) REFERENCES Campuses(Id)
 );
 
@@ -63,7 +63,7 @@ CREATE TABLE DisciplineEnrollments(
     Year INT,
     Undergraduate INT,
     Graduate INT,
-    PRIMARY KEY(Campus, Year),
+    PRIMARY KEY(Campus, Discipline, Year),
     FOREIGN KEY(Campus) REFERENCES Campuses(Id),
     FOREIGN KEY(Discipline) REFERENCES Disciplines(Id)
 );

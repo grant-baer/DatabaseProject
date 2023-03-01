@@ -30,12 +30,11 @@ CREATE TABLE Songs(
 CREATE TABLE Instruments(
     SongId INT,
     BandmateId INT,
-    Instrument VARCHAR(32) Primary KEY,
+    Instrument VARCHAR(32),
+    Primary KEY(SongId, BandmateId, Instrument),
 
     FOREIGN KEY(SongId) REFERENCES Songs(SongId),
     FOREIGN KEY(BandmateId) REFERENCES Band(Id)
-
-
 );
 
 CREATE TABLE Performance( 
@@ -61,7 +60,7 @@ CREATE TABLE Vocals(
     SongId INT,
     BandmateId INT,
     Type VARCHAR(32),
-    Primary KEY(SongId, BandmateId),
+    Primary KEY(SongId, BandmateId, Type),
     FOREIGN KEY(SongId) REFERENCES Songs(SongId),
     FOREIGN KEY(BandmateId) REFERENCES Band(Id)
 );

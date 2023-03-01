@@ -30,9 +30,10 @@ CREATE TABLE Items(
     Reciept INT,
     Ordinal INT,
     Item VARCHAR(32),
-    PRIMARY KEY(Reciept, Item),
-    FOREIGN KEY(Item) REFERENCES Goods(Id),
-    FOREIGN KEY(Reciept) REFERENCES Receipts(RecieptNumber)
+    PRIMARY KEY(Reciept, Ordinal),
+    FOREIGN KEY(Reciept) REFERENCES Receipts(RecieptNumber),
+    CONSTRAINT fkey FOREIGN KEY(Item) REFERENCES Goods(Id)
+    
 );
 
 
